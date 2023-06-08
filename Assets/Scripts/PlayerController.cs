@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,9 +19,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             GetComponent<Rigidbody2D>().velocity = Vector2.up * force;
         }
+        else
+        {
+            return;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        GameManager.GameOver();
     }
 }
