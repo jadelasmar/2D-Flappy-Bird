@@ -29,8 +29,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PipeScore"))
+        {
+            other.gameObject.SetActive(false);
+            GameManager.Instance.AddScore();
+            
+
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
-        GameManager.GameOver();
+        
     }
 }
