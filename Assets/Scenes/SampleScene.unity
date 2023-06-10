@@ -693,6 +693,7 @@ MonoBehaviour:
   oldDifficulty: 0
   speed: 0
   pipes: {fileID: 1772856580}
+  initialPipe: {fileID: 1176978551}
 --- !u!4 &271826702
 Transform:
   m_ObjectHideFlags: 0
@@ -1074,7 +1075,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599443084}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.04, y: 0, z: 0}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1096,7 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba72e517c57074b4ba631779bc60942b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.005
+  speed: 0.1
   modifier: 1
   initialPipe: {fileID: 1176978551}
   coin: {fileID: 2134777217}
@@ -1588,6 +1589,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 49e6ee33250214a9facc214f3a2fecb7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 49e6ee33250214a9facc214f3a2fecb7, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1964,7 +1969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 873e609b9a561834d9290330db052013, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 4
+  force: 7
 --- !u!58 &1027656562
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2012,10 +2017,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -2087,7 +2092,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027656560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 0, z: 0}
+  m_LocalPosition: {x: -7.01, y: -0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2890,7 +2895,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369496209}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.374, y: 0, z: 0}
+  m_LocalPosition: {x: 15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2957,7 +2962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba72e517c57074b4ba631779bc60942b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.005
+  speed: 0.1
   modifier: 1
   initialPipe: {fileID: 1176978551}
   coin: {fileID: 2037307425}
@@ -3782,7 +3787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701847016}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.707, y: 0, z: 0}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3849,7 +3854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba72e517c57074b4ba631779bc60942b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.005
+  speed: 0.1
   modifier: 1
   initialPipe: {fileID: 1176978551}
   coin: {fileID: 725984235}
