@@ -6,8 +6,6 @@ public class Tree : MonoBehaviour
 {
 
     public Transform initialTree;
-    public float speed;
-    public float modifier;
     
     void FixedUpdate()
     {

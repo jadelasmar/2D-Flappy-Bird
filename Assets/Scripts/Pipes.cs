@@ -6,8 +6,6 @@ using Random = UnityEngine.Random;
 
 public class Pipes : MonoBehaviour
 {
-    public float speed;
-    public float modifier;
     private float _random;
 
     public Transform initialPipe;
