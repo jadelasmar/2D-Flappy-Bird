@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
     public int speed;
     public Transform tree;
     public bool gameOver;
+    public GameObject gameOverImage;
+    public TextMeshProUGUI scoreLeft;
 
     private void Awake()
     {
@@ -26,7 +29,7 @@ public class GameManager : MonoBehaviour
     public void AddScore()
     {
         score++;
-        
+        scoreLeft.text = score.ToString();  
         difficulty = score / 5;
         
         Debug.Log("difficulty : "+difficulty+" and speed :"+speed);
@@ -46,10 +49,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene("Game");
+    }
 
     public  void GameOver()
     {
         gameOver = true;
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Invoke(nameof(GameDone),3f);
+        
+    }
+
+    public void GameDone()
+    {
+        gameOverImage.SetActive(true);
     }
 }
