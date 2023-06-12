@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
    [SerializeField] private int oldDifficulty;
     public int speed;
     public Transform tree;
+    public bool gameOver;
 
     private void Awake()
     {
@@ -46,8 +47,9 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public static void GameOver()
+    public  void GameOver()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameOver = true;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

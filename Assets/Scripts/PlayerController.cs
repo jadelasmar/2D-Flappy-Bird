@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     public float force;
     private Rigidbody2D _rb;
     private Animator _anim;
-    private static readonly int Clicked = Animator.StringToHash("clicked");
+    private static readonly int Fly = Animator.StringToHash("fly");
+    private static readonly int Hit = Animator.StringToHash("hit");
 
 
     // Start is called before the first frame update
@@ -22,10 +23,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-            Fly();
+        if (Input.GetMouseButtonDown(0) && !GameManager.Instance.gameOver)
+            ClickFly();
         else
-            _anim.SetBool(Clicked, false);
+            _anim.SetBool(Fly, false); 
 
     }
 
@@ -38,17 +39,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Fly()
+    private void ClickFly()
     {
         _rb.velocity = Vector2.up * force;
-        _anim.SetBool(Clicked, true);
+        _anim.SetBool(Fly, true);
     }
+    
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Pipe"))
         {
-            GameManager.GameOver();
+            _anim.SetBool(Hit, true);
+            GameManager.Instance.GameOver();
         }
     }
 }

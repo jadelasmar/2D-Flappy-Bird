@@ -11,6 +11,7 @@ public class Tree : MonoBehaviour
     
     void FixedUpdate()
     {
+        if (GameManager.Instance.gameOver) return;
         modifier = GameManager.Instance.speed;
         transform.Translate(Vector2.left * (speed * modifier));
     }
