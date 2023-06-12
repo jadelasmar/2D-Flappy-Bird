@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2490679055803431289}
   - component: {fileID: 2490679055803431290}
-  - component: {fileID: 2490679055803431291}
-  - component: {fileID: 2490679055803431292}
-  - component: {fileID: 2490679055803431293}
+  - component: {fileID: 4074420008895511195}
+  - component: {fileID: 6800899846425983225}
   m_Layer: 0
   m_Name: tree
   m_TagString: Untagged
@@ -33,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2490679055803431290
 SpriteRenderer:
@@ -87,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2490679055803431291
+--- !u!114 &4074420008895511195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,33 +95,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2490679055803431294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e8304260840df444bb80585859f65a9, type: 3}
+  m_Script: {fileID: 11500000, guid: f03de0190ca8d19488f720b3a3726926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartTimeBtwSpawn: 6
-  tree: {fileID: 2490679055803431294}
---- !u!50 &2490679055803431292
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2490679055803431294}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 6
---- !u!61 &2490679055803431293
+  initialTree: {fileID: 0}
+  speed: 0.1
+  modifier: 1
+--- !u!61 &6800899846425983225
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,6 +111,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
