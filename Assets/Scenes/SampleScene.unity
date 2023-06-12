@@ -944,7 +944,7 @@ Transform:
   - {fileID: 2134777220}
   - {fileID: 1956729577}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &599443087
 MonoBehaviour:
@@ -996,7 +996,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.94289017, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1007,7 +1007,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.77002716, y: 1}
   m_EdgeRadius: 0
 --- !u!1001 &603048633
 PrefabInstance:
@@ -1539,37 +1539,6 @@ Transform:
   m_Father: {fileID: 335110958}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
---- !u!1 &911364595
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 911364596}
-  m_Layer: 0
-  m_Name: initialTree
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &911364596
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 911364595}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13, y: -2.2777, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &927280561 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5983084003265119273, guid: a558a1473f1d24a42b47edb373ba7156, type: 3}
@@ -1688,6 +1657,7 @@ GameObject:
   - component: {fileID: 1027656563}
   - component: {fileID: 1027656562}
   - component: {fileID: 1027656561}
+  - component: {fileID: 1027656566}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -1837,6 +1807,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1027656566
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027656560}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0d7e9a00c7cfc9d4082064b2cb324110, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1043309741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2095,7 +2086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1176978551}
   m_Layer: 0
-  m_Name: InitialPipe
+  m_Name: InitialPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3383,7 +3374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490679055803431289, guid: 7343b0ebdb4846b49b57d794264ae8e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2490679055803431289, guid: 7343b0ebdb4846b49b57d794264ae8e7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3423,12 +3414,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490679055803431294, guid: 7343b0ebdb4846b49b57d794264ae8e7, type: 3}
       propertyPath: m_Name
-      value: tree
+      value: Tree
       objectReference: {fileID: 0}
     - target: {fileID: 4074420008895511195, guid: 7343b0ebdb4846b49b57d794264ae8e7, type: 3}
       propertyPath: initialTree
       value: 
-      objectReference: {fileID: 911364596}
+      objectReference: {fileID: 1176978551}
+    - target: {fileID: 6800899846425983225, guid: 7343b0ebdb4846b49b57d794264ae8e7, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9057083
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800899846425983225, guid: 7343b0ebdb4846b49b57d794264ae8e7, type: 3}
+      propertyPath: m_Offset.x
+      value: 3.602726
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

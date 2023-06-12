@@ -8,25 +8,25 @@ public class PlayerController : MonoBehaviour
 {
     public float force;
     private Rigidbody2D _rb;
-    
+    private Animator _anim;
+    private static readonly int Clicked = Animator.StringToHash("clicked");
+
 
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
-        {
-            GetComponent<Rigidbody2D>().velocity = Vector2.up * force;
-        }
+            Fly();
         else
-        {
-            return;
-        }
+            _anim.SetBool(Clicked, false);
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -35,9 +35,13 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             GameManager.Instance.AddScore();
-            
-
         }
+    }
+
+    private void Fly()
+    {
+        _rb.velocity = Vector2.up * force;
+        _anim.SetBool(Clicked, true);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -46,6 +50,5 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.GameOver();
         }
-
     }
 }
