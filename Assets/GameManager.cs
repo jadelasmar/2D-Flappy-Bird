@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     public int score;
     public int difficulty;
    [SerializeField] private int oldDifficulty;
-    public int speed;
+    public float speed;
+    public float speedAcc;
     public Transform tree;
     public bool gameOver;
     public GameObject gameOverImage;
@@ -23,7 +24,13 @@ public class GameManager : MonoBehaviour
     {
         difficulty = oldDifficulty = 0;
         Instance = this;
-        speed = 1;
+    }
+
+    private void FixedUpdate()
+    {
+        speed += speedAcc * Time.deltaTime;
+        Debug.Log(speed);
+
     }
 
     public void AddScore()
@@ -31,22 +38,7 @@ public class GameManager : MonoBehaviour
         score++;
         scoreLeft.text = score.ToString();  
         difficulty = score / 5;
-        
-        Debug.Log("difficulty : "+difficulty+" and speed :"+speed);
 
-        if (oldDifficulty == difficulty) return;
-        oldDifficulty = difficulty;
-            
-        switch (difficulty)
-        {
-            default:
-                speed++;
-                break;
-            
-            case 2:
-            case 5:
-                break;
-        }
     }
 
     public void Restart()

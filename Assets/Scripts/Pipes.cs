@@ -19,8 +19,9 @@ public class Pipes : MonoBehaviour
     void FixedUpdate()
     {
         if (GameManager.Instance.gameOver) return;
-        modifier = GameManager.Instance.speed;
-        transform.Translate(Vector2.left * (speed * modifier));
+        transform.Translate(Vector2.left * GameManager.Instance.speed);
+        
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
